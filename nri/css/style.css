@@ -1,0 +1,664 @@
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  padding: 0px;
+  text-align: center;
+}
+
+/*header領域*/
+
+.nri-header {
+  background-color: #fff;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1000;
+}
+
+.header-logo {
+  margin: 0 25px 0 25px;
+  width: 58px;
+  height: auto;
+  transition: all 0.4s;
+  box-sizing: border-box;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-main-menu {
+  box-sizing: border-box;
+}
+
+.global-menu {
+  display: flex;
+  font-size: 26px;
+  right: 0;
+  padding: 0;
+  margin-right: 35px;
+  list-style: none;
+}
+
+.nri-header ul {
+  display: flex;
+}
+
+.header-main-menu li {
+  margin-right: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.global-menu li {
+  margin: 0 15px;
+  padding: 0;
+  list-style: none;
+}
+
+header a {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  height: 60px;
+  box-sizing: border-box;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+  touch-action: manipulation;
+  text-decoration: none;
+}
+
+.menu-item a:hover {
+  color: #0c419a;
+  border-bottom: solid 2px #0c419a;
+}
+
+/*ハンバーガーメニューの実装*/
+
+.hamburg-menu {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.hamburg-menu span {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  text-align: center;
+}
+.hamburg-menu,
+.hamburg-menu span {
+  display: inline-block;
+  transition: all 0.4s, transform 0.4s;
+  width: 20px;
+  margin: 0 auto;
+}
+.hamburg-menu span:nth-of-type(1) {
+  top: calc(50% - 9px);
+  background-color: #000;
+}
+.hamburg-menu span:nth-of-type(2) {
+  top: calc(50% - 1px);
+  background-color: #000;
+}
+.hamburg-menu span:nth-of-type(3) {
+  top: calc(50% + 8px);
+  background-color: #000;
+}
+
+/*パンくずリスト*/
+.topic-path {
+  margin: 0 auto 25px auto;
+  width: auto;
+  padding-top: 60px;
+}
+
+.topic-path-list {
+  margin: 0 0 0 70px;
+  padding: 0;
+  list-style: none;
+}
+
+.topic-path-list li {
+  display: inline;
+  list-style: none;
+}
+
+.topic-path-list li::after {
+  content: "＞";
+  margin: 0 2px 0 6px;
+  color: #231815;
+  font-weight: 400;
+  font-size: 6px;
+}
+
+.topic-path-list li:last-child::after {
+  content: "";
+}
+
+.topic-path-list li a {
+  text-decoration: none;
+  color: #999;
+  font-size: 1.2rem;
+  margin: 0 0 5px 0;
+}
+
+/*ヘッダー画像*/
+.head-banner {
+  position: relative;
+  max-width: 100%;
+  height: 250px;
+  margin: 0 auto 30px auto;
+}
+
+.head-banner-title {
+  position: absolute;
+  color: white;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.head-banner-title p {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.head-banner-title h1 {
+  margin: 16px 0 10px;
+  padding: 0;
+  font-size: 2.8rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.head-banner img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* SNSボタン */
+.share-botton {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.share-botton ul {
+  width: 172px;
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.share-botton ul::before {
+  content: "Share";
+  font-family: Arial;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #666;
+}
+
+.share-botton li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: list-item;
+}
+
+.share-botton a {
+  color: #0c419a;
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+  transition: all 0.3s;
+}
+
+.share-botton img {
+  width: 24px;
+  height: 24px;
+  max-width: 100%;
+  border-style: none;
+}
+
+/* 記事内容 */
+
+section {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+.main-title h2 {
+  font-size: 2.2rem;
+  line-height: 1.5;
+  padding: 0 0 0 32px;
+  position: relative;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.main-title h2::before {
+  content: "";
+  background: url(../img/bg-heading-h2.png) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.main-text {
+  font-size: 1.6rem;
+  line-height: 1.88;
+}
+
+.main-text p {
+  padding: 0;
+  margin-top: 16px;
+}
+
+.main-img img {
+  margin-top: 30px;
+  height: auto;
+  max-width: 100%;
+  width: 900px;
+}
+
+/*pdfダウンロード*/
+.download-botton {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.88;
+  margin-bottom: 60px;
+  width: 800px;
+}
+
+.download-botton a {
+  color: #fff;
+  background: #005bac;
+  border: solid 1px #005bac;
+  display: inline-block;
+  min-height: 50px;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  padding: 15px 20px;
+  position: relative;
+  width: auto;
+  text-decoration: none;
+  text-align: center;
+  max-height: 72px;
+}
+
+.download-botton a:hover {
+  opacity: 0.8;
+}
+
+.download-botton a::before {
+  content: "＞";
+  color: #fff;
+  top: 8px;
+  font-weight: 400;
+  font-size: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  margin: auto;
+  display: inline-block;
+  width: 8px;
+  display: inline-block;
+}
+
+.download-botton a::after {
+  content: "";
+  background: url(../img/icon-pdf.svg) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 0 0 11px;
+  vertical-align: -2px;
+}
+
+/*　page-move */
+
+.page-move {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  width: 800px;
+}
+
+.page-move a {
+  color: #0c419a;
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+  transition: all 0.3s;
+  font-size: 1.6rem;
+  line-height: 1.88;
+}
+
+.text-align-left {
+  text-align: left;
+  width: calc(50%);
+}
+
+.text-align-right {
+  text-align: right;
+  width: calc(50%);
+}
+
+/* under-content */
+
+.under-content {
+  margin-top: 40px;
+  background: #deecf8;
+  padding: 20px;
+}
+
+.under-content p {
+  font-size: 1.6rem;
+  line-height: 1.88;
+  padding: 0;
+  margin: 0;
+}
+
+.under-content-list {
+  text-align: center;
+}
+
+.under-content ul {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.under-content li {
+  padding: 0 10px;
+  width: calc(30%);
+  font-size: 1.6rem;
+  line-height: 1.88;
+}
+
+.under-content a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  text-align: center;
+  color: #0c419a;
+  border: solid 1px #ccc;
+  background: #fff;
+  padding: 15px 20px;
+  position: relative;
+  margin: 0 0 20px 0;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.under-content a:hover {
+  background: #f4f4f4;
+}
+
+.under-content a::before {
+  content: ">";
+  font-weight: 400;
+  color: #231815;
+  font-size: 10px;
+  position: absolute;
+  left: 10px;
+  margin: 0 auto;
+}
+
+/* company-info */
+
+.company-info {
+  margin-bottom: 120px;
+  border-top: 2px solid #333;
+  display: block;
+  width: 1000px;
+  margin: 0 auto 60px auto;
+  padding: 0 10px;
+}
+
+.company-info h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 18px 0 30px 0;
+  position: relative;
+}
+
+.company-info-list {
+  padding: 18px 0 30px 0;
+  position: relative;
+  margin: 0 -10px;
+  border-bottom: 1px dotted #999;
+}
+
+.company-info-list p {
+  font-size: 1.6rem;
+  line-height: 1.88;
+  width: 100%;
+}
+
+.company-info-list ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.company-info-list li {
+  margin: 20px 0 0 0;
+  list-style: none;
+  font-size: 1.4rem;
+  display: block;
+  position: relative;
+  width: calc(25%);
+}
+
+.company-info-list a {
+  color: #0c419a;
+  text-decoration: none;
+  transition: all 0.3s;
+  padding: 0 10px;
+}
+
+.company-info-list a::before {
+  position: absolute;
+  left: 0;
+  content: ">";
+  color: #4c4242;
+  background-size: contain;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 auto;
+}
+
+/* page-move */
+
+.page-move2 {
+  margin: 0 auto 60px auto;
+  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+}
+
+.page-move2 a {
+  color: #0c419a;
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+  transition: all 0.3s;
+  font-size: 1.6rem;
+  line-height: 1.88;
+}
+
+/* sns */
+
+.sns {
+  border-top: 2px solid #999;
+  border-bottom: 2px solid #999;
+  font-size: 0;
+}
+
+.sns ul {
+  text-align: center;
+}
+
+.sns li {
+  display: inline-block;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: HelveticaNeue;
+  padding: 30px;
+}
+
+.sns img {
+  width: 28px;
+  height: 28px;
+}
+
+/* footer-main-content */
+
+.footer-main-content {
+  max-width: 1286px;
+  margin: 40px auto 70px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-content-row {
+  width: calc(25%);
+}
+
+.footer-content-row ul li {
+  padding: 0;
+  margin: 13px 0 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content1 {
+  color: #333;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 12px 0;
+  text-decoration: none;
+}
+
+.content {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 400;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-content-row li a::before {
+  content: ">";
+  color: #4b4340;
+  background-size: contain;
+  display: inline-block;
+  font-size: 1rem;
+  width: 8px;
+  height: 8px;
+  margin: 0 10px 0 0;
+}
+
+/*footer-sub-content */
+
+.footer-sub-content {
+  border-top: 1px solid #ccc;
+}
+
+.footer-sub-content-list {
+  max-width: 1000px;
+  margin: 0 auto 15px auto;
+  font-size: 0;
+  padding-top: 60px;
+}
+
+.footer-sub-content-list li {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1em 5px 0;
+}
+
+.footer-sub-content-list li + li::before {
+  content: "|";
+  margin: 0 1em 0 0;
+}
+
+.footer-sub-content-list a {
+  color: #999;
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+  transition: all 0.3s;
+}
+
+.copylight {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #333;
+  padding-bottom: 60px;
+}
+
+/* page-top */
+.page-top {
+  z-index: 200;
+  width: 60px;
+  height: 60px;
+  background-color: #333;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+.page-top a {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-top i::before {
+  content: "\02227";
+  color: #fff;
+}
